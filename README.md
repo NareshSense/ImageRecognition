@@ -1,3 +1,3 @@
 # ImageRecognition
-A test framework to recognise images.
+An iOS test framework to recognise images.
 
