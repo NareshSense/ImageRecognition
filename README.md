@@ -1,2 +1,3 @@
 # ImageRecognition
-A test framework to recognise images
+A test framework to recognise images.
+
