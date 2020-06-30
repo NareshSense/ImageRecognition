@@ -14,7 +14,7 @@ import Vision
 @available(iOS 13.0, *)
 public class NMImageRecognizer {
     
-    let model = NMNewIndianGrocery()
+    let model = NMIndianGroceryVersion3()
     var textRecognitionRequest = VNRecognizeTextRequest()
     var recognizedText = ""
     
@@ -47,7 +47,12 @@ public class NMImageRecognizer {
             let buffer = scaledImage.buffer(),
             let output = try? model.prediction(image: buffer) {
             let objectName: String = output.label
-            classifiedText = objectName
+            if(objectName.caseInsensitiveCompare("PACKET") == .orderedSame) {
+                classifiedText = recognizeText(image)
+            }
+            else {
+                classifiedText = objectName
+            }
         }
         else {
             classifiedText = "Sorry, Could not find anything!"
@@ -55,7 +60,7 @@ public class NMImageRecognizer {
         return classifiedText
     }
     
-    public func recognizeText(_ image : UIImage) -> String {
+    func recognizeText(_ image : UIImage) -> String {
         setUpTextRequest()
         guard let cgImg = image.cgImage else {
             fatalError("Missing image to scan")

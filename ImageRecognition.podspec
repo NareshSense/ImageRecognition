@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "ImageRecognition"
-  spec.version      = "1.0.0"
+  spec.version      = "2.0.0"
   spec.summary      = "A framework to recognise images."
   spec.description  = <<-DESC
                     ImageRecognition is a small and test  framework that allows to monitor and recognise images!

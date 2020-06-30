@@ -11,8 +11,8 @@
 		642E28A524A33D4000875D3F /* ImageRecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E28A424A33D4000875D3F /* ImageRecognitionTests.swift */; };
 		642E28A724A33D4000875D3F /* ImageRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 642E289924A33D4000875D3F /* ImageRecognition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		642E28B324A33EB100875D3F /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E28B224A33EB100875D3F /* UIImageExtension.swift */; };
-		642E28B524A33F3F00875D3F /* NMNewIndianGrocery.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 642E28B424A33F3F00875D3F /* NMNewIndianGrocery.mlmodel */; };
 		64BE306524A5CCEB0083ACDF /* NMImageRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BE306424A5CCEB0083ACDF /* NMImageRecognizer.swift */; };
+		64CAED3024AB2017009E76E3 /* NMIndianGroceryVersion3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 64CAED2F24AB2017009E76E3 /* NMIndianGroceryVersion3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +33,8 @@
 		642E28A424A33D4000875D3F /* ImageRecognitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognitionTests.swift; sourceTree = "<group>"; };
 		642E28A624A33D4000875D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		642E28B224A33EB100875D3F /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
-		642E28B424A33F3F00875D3F /* NMNewIndianGrocery.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NMNewIndianGrocery.mlmodel; sourceTree = "<group>"; };
 		64BE306424A5CCEB0083ACDF /* NMImageRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NMImageRecognizer.swift; sourceTree = "<group>"; };
+		64CAED2F24AB2017009E76E3 /* NMIndianGroceryVersion3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NMIndianGroceryVersion3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +77,8 @@
 		642E289824A33D4000875D3F /* ImageRecognition */ = {
 			isa = PBXGroup;
 			children = (
+				64CAED2F24AB2017009E76E3 /* NMIndianGroceryVersion3.mlmodel */,
 				64BE306424A5CCEB0083ACDF /* NMImageRecognizer.swift */,
-				642E28B424A33F3F00875D3F /* NMNewIndianGrocery.mlmodel */,
 				642E28B224A33EB100875D3F /* UIImageExtension.swift */,
 				642E289924A33D4000875D3F /* ImageRecognition.h */,
 				642E289A24A33D4000875D3F /* Info.plist */,
@@ -206,7 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				642E28B324A33EB100875D3F /* UIImageExtension.swift in Sources */,
-				642E28B524A33F3F00875D3F /* NMNewIndianGrocery.mlmodel in Sources */,
+				64CAED3024AB2017009E76E3 /* NMIndianGroceryVersion3.mlmodel in Sources */,
 				64BE306524A5CCEB0083ACDF /* NMImageRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
