@@ -36,26 +36,43 @@ public class NMImageRecognizer {
         })
     }
     
+    func filterText(_ fullText:String) -> String {
+        let textArray = fullText.components(separatedBy: "\n")
+        let title    = textArray[0]
+        let subtitle = textArray.count > 1 ? textArray[1] : ""
+        let description = textArray.count > 2 ? textArray[2] : ""
+        return title + " " + subtitle + " " + description
+    }
+    
     public func classifyImage(_ image : UIImage) -> String {
-        var classifiedText = ""
-        let size = CGSize(width: 224, height: 224)
-        UIGraphicsBeginImageContextWithOptions(size, false, CGFloat(0.0))
-        image.draw(in: CGRect(origin: .zero, size: size))
-        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        if let scaledImage = scaledImage,
-            let buffer = scaledImage.buffer(),
-            let output = try? model.prediction(image: buffer) {
-            let objectName: String = output.label
-            if(objectName.caseInsensitiveCompare("PACKET") == .orderedSame) {
-                classifiedText = recognizeText(image)
-            }
-            else {
-                classifiedText = objectName
-            }
+        var classifiedText = String()
+        let text = recognizeText(image)
+        if (text != "") {
+            classifiedText = filterText(text)
         }
         else {
-            classifiedText = "Sorry, Could not find anything!"
+            let size = CGSize(width: 224, height: 224)
+            UIGraphicsBeginImageContextWithOptions(size, false, CGFloat(0.0))
+            image.draw(in: CGRect(origin: .zero, size: size))
+            let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            if let scaledImage = scaledImage,
+                let buffer = scaledImage.buffer(),
+                let output = try? model.prediction(image: buffer) {
+                let objectName: String = output.label
+                /*
+                 if(objectName.caseInsensitiveCompare("PACKET") == .orderedSame) {
+                 classifiedText = recognizeText(image)
+                 }
+                 else {
+                 classifiedText = objectName
+                 }
+                 */
+                classifiedText = objectName
+            }
+            else {
+                classifiedText = "Sorry, Could not find anything!"
+            }
         }
         return classifiedText
     }
